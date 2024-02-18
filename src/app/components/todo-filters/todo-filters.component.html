@@ -1,0 +1,86 @@
+<div class="container mb-2 mt-4">
+  <div id="filterDropDown" class="row justify-content-center    gap-2 text-capitalize">
+    <div class="col-12 col-md-auto">
+      <div class="btn-group dropdown-group border col-12 col-md-auto">
+        <button class="btn SelectDropDown dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Select Category - {{selectedCategory}}
+        </button>
+        <ul class="dropdown-menu SelectDropDown" aria-labelledby="dropdownMenuButton">
+          <li *ngFor="let option of categoryOptions">
+            <a class="dropdown-item text-capitalize btn custom-primary-btn" href="#" (click)="selectCategory(option)">{{
+              option }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-auto">
+      <div class="btn-group dropdown-group col-12 col-md-auto">
+        <button class="btn SelectDropDown dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Sort Dates - {{selectedDateFilter}}
+        </button>
+        <ul class="dropdown-menu SelectDropDown" aria-labelledby="dropdownMenuButton">
+          <li>
+            <a class="dropdown-item text-capitalize btn custom-primary-btn"
+              (click)="selectDateFilter('latest')">Latest</a>
+            <a class="dropdown-item text-capitalize btn custom-primary-btn"
+              (click)="selectDateFilter('oldest')">Oldest</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-auto">
+      <div class="btn-group dropdown-group col-12 col-md-auto">
+        <button class="btn SelectDropDown dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Select Priority - {{selectedPriorityFilter}}
+        </button>
+        <ul class="dropdown-menu SelectDropDown" aria-labelledby="dropdownMenuButton">
+          <li *ngFor="let option of priorityOptions">
+            <a class="dropdown-item text-capitalize btn custom-primary-btn" href="#" (click)="selectPriority(option)">{{
+              option }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container mb-4 mt-2">
+  <div class="row align-items-center text-capitalize">
+    <div class="col-md-4 ">
+      <div class="dropdown mt-2">
+        <label for="categorySelect" class="form-label">Filter by Category:</label>
+        <select  id="categorySelect" class="SelectDropDown form-select " [(ngModel)]="selectedCategory" (change)="onFilterChange()">
+          <option value="all" >All</option>
+          <option value="Work" >Work</option>
+          <option value="Personal" >Personal</option>
+          <option value="Office" >Office</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="dropdown mt-2">
+        <label for="dateSelect" class="form-label">Filter by Date:</label>
+        <select id="dateSelect" class="SelectDropDown form-select" [(ngModel)]="selectedDateFilter" (change)="onFilterChange()">
+          <option value="latest">Latest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="dropdown mt-2 ">
+        <label for="prioritySelect" class="form-label">Filter by Priority:</label>
+        <select id="prioritySelect" class="SelectDropDown form-select" [(ngModel)]="selectedPriorityFilter" (change)="onFilterChange()">
+          <option value="all">All</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div> -->

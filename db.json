@@ -1,0 +1,64 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Complete Angular tutorial",
+      "description": "Finish the Angular tutorial on building a todo list application.",
+      "dueDate": "2024-02-20T08:00:00Z",
+      "createdDate": "2024-02-15T10:00:00Z",
+      "category": "Personal",
+      "priority": "High",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "title": "Buy groceries",
+      "description": "Buy milk, eggs, bread, and vegetables from the grocery store.",
+      "dueDate": "2024-02-18T16:00:00Z",
+      "createdDate": "2024-02-14T15:00:00Z",
+      "category": "Personal",
+      "priority": "High",
+      "completed": false
+    },
+    {
+      "id": "3",
+      "title": "Prepare presentation slides",
+      "description": "Create slides for the upcoming project presentation.",
+      "dueDate": "2024-02-25T12:00:00Z",
+      "createdDate": "2024-02-13T09:00:00Z",
+      "category": "Work",
+      "priority": "High",
+      "completed": false
+    },
+    {
+      "id": "4",
+      "title": "Call mom",
+      "description": "Call mom to wish her happy birthday.",
+      "dueDate": "2024-02-16T18:00:00Z",
+      "createdDate": "2024-02-14T12:00:00Z",
+      "category": "Personal",
+      "priority": "Low",
+      "completed": false
+    },
+    {
+      "id": "5",
+      "title": "Exercise",
+      "description": "Go for a run or do a workout session at the gym.",
+      "dueDate": "2024-02-17T07:00:00Z",
+      "createdDate": "2024-02-15T07:30:00Z",
+      "category": "Personal",
+      "priority": "Medium",
+      "completed": false
+    },
+    {
+      "id": "a526",
+      "title": "deploy website",
+      "description": "upoload on github and netlify ",
+      "createdDate": "2024-02-17T16:52:23.535Z",
+      "dueDate": "2024-02-18T00:00:00.000Z",
+      "category": "Work",
+      "priority": "High",
+      "completed": false
+    }
+  ]
+}

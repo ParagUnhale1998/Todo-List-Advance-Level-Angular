@@ -1,0 +1,12 @@
+<!-- <app-header></app-header> -->
+<app-loading-indicator></app-loading-indicator>
+<app-todo-filters (filterChange)="onFilterChange($event)"></app-todo-filters>
+<app-task-table 
+  [allTasks]="tasks" 
+  [selectedCategory]="selectedCategory" 
+  [selectedDateFilter]="selectedDateFilter" 
+  [selectedPriorityFilter]="selectedPriorityFilter"
+  (edit)="onEdit($event)"
+  (delete)="onDelete($event)">
+</app-task-table>
+<!-- <app-footer></app-footer> -->

@@ -1,0 +1,42 @@
+<div class="modal-header">
+    <h4 style="font-family: Quicksand , sans-serif;" class="modal-title fw-bold">{{ editMode ? 'Update Task' : 'Add Task' }} Form</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="p-3 container-sm">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control form-control-info" id="title" formControlName="title" placeholder="Enter task title">
+        <span *ngIf="taskForm.get('title')?.invalid && (taskForm.get('title')?.dirty || taskForm.get('title')?.touched)" class="text-danger">Title is required.</span>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control form-control-info" id="description" formControlName="description" rows="3" placeholder="Enter task description"></textarea>
+        <span *ngIf="taskForm.get('description')?.invalid && (taskForm.get('description')?.dirty || taskForm.get('description')?.touched)" class="text-danger">Description is required.</span>
+    </div>
+    <div class="mb-3">
+        <label for="dueDate" class="form-label">Task Deadline</label>
+        <input type="date" class="form-control form-control-info" id="dueDate" formControlName="dueDate" [min]="getMinDate()">
+        <span *ngIf="taskForm.get('dueDate')?.invalid && (taskForm.get('dueDate')?.dirty || taskForm.get('dueDate')?.touched)" class="text-danger">Due Date is required.</span>
+    </div>
+    <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+        <select class="form-select form-select-info" id="category" formControlName="category">
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Office">Office</option>
+        </select>
+        <span *ngIf="taskForm.get('category')?.invalid && (taskForm.get('category')?.dirty || taskForm.get('category')?.touched)" class="text-danger">Category is required.</span>
+    </div>
+
+    <div class="mb-3">
+        <label for="priority" class="form-label">Priority</label>
+        <select class="form-select form-select-info" id="priority" formControlName="priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <span *ngIf="taskForm.get('priority')?.invalid && (taskForm.get('priority')?.dirty || taskForm.get('priority')?.touched)" class="text-danger">Priority is required.</span>
+    </div>
+    <button type="submit" class="btn btn-info me-2" [disabled]="taskForm.invalid">{{ editMode ? 'Update' : 'Submit' }}</button>
+    <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss('Close click')">Close</button>
+</form>

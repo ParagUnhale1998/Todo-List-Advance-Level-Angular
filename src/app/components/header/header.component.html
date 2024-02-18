@@ -1,0 +1,15 @@
+<nav class="navbar navbar-light bg-light shadow-sm ">
+    <div class="container position-relative">
+        <div class="d-flex align-items-center gap-1">
+           <span id="logo" class="p-2 rounded-circle m-0"> <i class="fas fa-tasks text-white fs-4"></i></span>
+            <span class="navbar-brand mb-0 fw-bold" style="font-family: 'Lato', sans-serif; font-size: 2rem;">Todo List</span>
+        </div>
+            
+        <div  class="themePicker d-flex align-items-center justify-between gap-2">
+            <button class="btn custom-primary-btn fw-bolder" (click)="open()">Add Task</button>
+            <img class="rounded-circle" width="20" height="20" src="assets/color-icons-12541.png" alt="">
+            <input type="color" class="outline-0 border-0 shadow-sm" style="cursor: pointer;  " [(ngModel)]="primaryColor" (change)="changeTheme()">
+        </div>
+    </div>
+    
+</nav>

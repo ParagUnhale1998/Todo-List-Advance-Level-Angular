@@ -1,0 +1,9 @@
+   <div class="container">
+       <app-todo-list></app-todo-list>
+       <div class="loading-popup" *ngIf="showPopup">
+         <div class="popup-content">
+           <p>Wait for 1 minute to load backend data...</p>
+           <button class="btn btn-info" (click)="closePopup()">close</button>
+         </div>
+       </div>       
+    </div>

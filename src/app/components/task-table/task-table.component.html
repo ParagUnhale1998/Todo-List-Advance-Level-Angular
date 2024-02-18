@@ -1,0 +1,51 @@
+<div class="container-fluid  ">
+<div *ngIf="!allTasks || allTasks.length === 0 || !(allTasks | filters:selectedCategory:selectedDateFilter:selectedPriorityFilter)?.length" class="alert alert-warning fw-bold text-center" role="alert">
+    Data is not available.
+</div>
+<table class="container-sm table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Index</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Dates</th>
+            <th scope="col">Category</th>
+            <th scope="col">Priority</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of allTasks | filters:selectedCategory:selectedDateFilter:selectedPriorityFilter; index as i; trackBy: trackById"
+            class="move-to-top" #taskRow>
+            
+            <td class="fw-bolder">{{ i + 1 }}</td>
+            <td>{{ task.title }}</td>
+            <td>{{ task.description }}</td>
+            <td>
+                <div *ngIf="task.createdDate">
+                    <p>Created: {{ task.createdDate | date: 'dd-MM-yyyy' }}</p>
+                </div>
+                <div *ngIf="task.dueDate">
+                    <p>Due: {{ task.dueDate | date: 'dd-MM-yyyy' }}</p>
+                </div>
+
+            </td>
+            <td>{{ task.category }}</td>
+            <td>{{ task.priority }}</td>
+            <td>
+                <button class="btn fz-2vw custom-primary-btn  text-center mb-2 mb-xxl-0 me-0   me-lg-2 "
+                    (click)="editTask(task)">
+                    <i class="fas fa-edit "></i>
+                </button>
+                <button class="btn fz-2vw btn-success" *ngIf="task.completed" (click)="deleteTask(task,taskRow)">
+                    <i class="fas fa-check"></i> 
+                </button>
+                <button class="btn fz-2vw btn-warning " *ngIf="!task.completed" (click)="deleteTask(task,taskRow)">
+                    <!-- <i class="fas fa-hourglass-half"></i> -->
+                    <i class="fas fa-clock"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
